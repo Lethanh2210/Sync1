@@ -7,12 +7,19 @@ const onMyBirthday = (isKayoSick) => {
                 console.log('so luong banh: null')
                 resolve();
             }
-        },100)
+        },300)
 
 
     });
 };
 
-onMyBirthday(true)
+async function test(isKayoSick){
+    return await onMyBirthday(isKayoSick);
+}
+
+test().then()
+
+onMyBirthday(false)
     .then()
+    .then(()=> onMyBirthday(true))
     .catch(err => console.log(err));

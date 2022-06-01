@@ -62,13 +62,22 @@ End*/
 //
 // printAll().catch(err => console.log(err)).then()
 
-let promise = new Promise(function(resolve, reject) {
-    setTimeout(() => {reject("done")}, 100);
+// let promise = new Promise(function(resolve, reject) {
+//     setTimeout(() => {reject("done")}, 100);
+//
+// });
+//
+// // resolve runs the first function in .then
+// promise.then(null, error => console.log(error)
+//      // shows "done!" after 1 second
+//     // doesn't run
+// )
 
-});
+Promise.resolve('Success!')
+    .then(data =>
+        data.toUpperCase()
+    )
+    .then(data => {
+        console.log(data)
+    })
 
-// resolve runs the first function in .then
-promise.then(null, error => console.log(error)
-     // shows "done!" after 1 second
-    // doesn't run
-)
