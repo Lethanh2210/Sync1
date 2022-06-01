@@ -73,11 +73,38 @@ End*/
 //     // doesn't run
 // )
 
-Promise.resolve('Success!')
-    .then(data =>
-        data.toUpperCase()
-    )
-    .then(data => {
-        console.log(data)
-    })
+// Promise.resolve('Success!')
+//     .then(data =>
+//         data.toUpperCase()
+//     )
+//     .then(data => {
+//         console.log(data)
+//     })
+
+let fs = require('fs');
+
+async function functionReadFile(){
+    fs.readFile('sample.txta',
+        function(err, data) {
+            if (err){
+                throw err;
+            }
+
+        });
+
+}
+async function demo(){
+    try{
+        await functionReadFile();
+
+    } catch(err){
+        console.log("In Catch Block");
+        console.log(err);
+        // console.error(err.message);
+    }
+
+    // await functionReadFile();
+
+}
+demo().then();
 
