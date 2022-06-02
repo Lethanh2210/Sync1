@@ -84,22 +84,30 @@ End*/
 var fs = require('fs');
 
 async function functionReadFile(){
-    fs.readFile('sample.txta',
-        function(err, data) {
-            if (err) throw err;
-        });
+    fs.readFile('sample.txta',(err, data)=> {
+        try {
 
+                if (err) throw err;
+            }
+        catch (e) {
+            console.log(e)
+        }
+
+    })
 }
-async function demo(){
-
-    try{
-        await functionReadFile();
-
-    } catch(err){
-        console.log("In Catch Block")
-        console.log(err);
-    }
-
-}
-demo().then();
+// async function demo(){
+//
+//     try{
+//         await functionReadFile();
+//
+//     }catch(err){
+//         console.log("In Catch Block")
+//         console.log(err);
+//     }
+//     finally {
+//         console.log('done')
+//     }
+//
+// }
+// demo().then();
 
